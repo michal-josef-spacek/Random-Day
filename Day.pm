@@ -6,7 +6,6 @@ use warnings;
 
 # Modules.
 use Class::Utils qw(set_params);
-use Error::Pure qw(err);
 use DateTime;
 use DateTime::Event::Random;
 use DateTime::Event::Recurrence;

@@ -11,6 +11,9 @@ author 'Michal Špaček <skim@cpan.org>';
 license 'bsd';
 name 'Random-Day';
 requires 'Class::Utils' => 0.03;
+requires 'DateTime' => 0;
+requires 'DateTime::Event::Random' => 0;
+requires 'DateTime::Event::Recurrence' => 0;
 resources 'bugtracker' => 'https://rt.cpan.org/Public/Dist/Display.html'.
 	'?Name=Random-Day';
 resources 'homepage' => 'https://github.com/tupinek/Random-Day';

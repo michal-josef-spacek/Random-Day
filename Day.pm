@@ -182,3 +182,163 @@ sub _range {
 }
 
 1;
+
+__END__
+
+=pod
+
+=encoding utf8
+
+=head1 NAME
+
+Random::Day - Perl class for Czech RC identification.
+
+=head1 SYNOPSIS
+
+ use Random::Day;
+ my $obj = Random::Day->new(%params);
+ my $dt = $obj->get;
+ my $dt = $obj->random;
+ my $dt = $obj->random_day($day);
+ my $dt = $obj->random_day_month($day, $month);
+ my $dt = $obj->random_day_month_year($day, $month, $year);
+ my $dt = $obj->random_month($month);
+ my $dt = $obj->random_month_year($month, $year);
+ my $dt = $obj->random_year($year);
+
+=head1 METHODS
+
+=over 8
+
+=item C<new(%params)>
+
+ Constructor.
+
+=over 8
+
+=item * C<day>
+
+ Day.
+ Default value is undef.
+
+=item * C<dt_from>
+
+ DateTime object from.
+ Default value is DateTime object for 1900 year.
+
+=item * C<dt_to>
+
+ DateTime object to.
+ Default value is DateTime object for 2050 year.
+
+=item * C<month>
+
+ Month.
+ Default value is undef.
+
+=item * C<year>
+
+ Year.
+ Default value is undef.
+
+=back
+
+=item C<get()>
+
+ Get random date defined by constructor parameters.
+ Returns DateTime object for date.
+
+=item C<random()>
+
+ Get random date.
+ Returns DateTime object for date.
+
+=item C<random_day($day)>
+
+ Get random date defined by day.
+ Returns DateTime object for date.
+
+=item C<random_day_month($day, $month)>
+
+ Get random date defined by day and month.
+ Returns DateTime object for date.
+
+=item C<random_day_month_year($day, $month, $year)>
+
+ Get date defined by day, month and year
+ Returns DateTime object for date.
+
+=item C<random_month($month)>
+
+ Get random date defined by month.
+ Returns DateTime object for date.
+
+=item C<random_month_year($month, $year)>
+
+ Get random date defined by month and year.
+ Returns DateTime object for date.
+
+=item C<random_year($year)>
+
+ Get random date defined by year.
+ Returns DateTime object for date.
+
+=back
+
+=head1 ERRORS
+
+ new():
+         From Class::Utils::set_params():
+                 Unknown parameter '%s'.
+
+=head1 EXAMPLE
+
+ # Pragmas.
+ use strict;
+ use warnings;
+
+ # Modules.
+ use Random::Day;
+
+ # Object.
+ my $obj = Random::Day->new;
+
+ # Get date.
+ my $dt = $obj->get;
+ 
+ # Print out.
+ print $dt->ymd."\n";
+
+ # Output like:
+ # \d\d\d\d-\d\d-\d\d
+
+=head1 DEPENDENCIES
+
+L<Class::Utils>,
+L<DateTime>,
+L<DateTime::Event::Random>,
+L<DateTime::Event::Recurrence>.
+
+=head1 SEE ALSO
+
+L<Data::Random>.
+
+=head1 REPOSITORY
+
+L<https://github.com/tupinek/Random-Day>
+
+=head1 AUTHOR
+
+Michal Špaček L<mailto:skim@cpan.org>
+
+L<http://skim.cz>
+
+=head1 LICENSE AND COPYRIGHT
+
+BSD license.
+
+=head1 VERSION
+
+0.01
+
+=cut

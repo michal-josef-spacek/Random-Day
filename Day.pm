@@ -191,7 +191,7 @@ __END__
 
 =head1 NAME
 
-Random::Day - Perl class for Czech RC identification.
+Random::Day - Class for random day generation.
 
 =head1 SYNOPSIS
 

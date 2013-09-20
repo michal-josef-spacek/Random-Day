@@ -1,4 +1,4 @@
-0.02
+0.02 2013-09-20
  - Fix NAME in doc.
  - Rewrite Changes file to CPAN::Changes::SPEC format.
 

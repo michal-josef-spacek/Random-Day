@@ -19,3 +19,7 @@ t/Random-Day/00-use.t
 t/Random-Day/01-version.t
 t/Random-Day/02-pod_coverage.t
 t/Random-Day/03-pod.t
+t/Random-Day/04-new.t
+t/Random-Day/05-get.t
+t/Random-Day/06-random.t
+t/Random-Day/07-random_day.t

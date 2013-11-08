@@ -9,6 +9,7 @@ use Class::Utils qw(set_params);
 use DateTime;
 use DateTime::Event::Random;
 use DateTime::Event::Recurrence;
+use Error::Pure qw(err);
 
 # Version.
 our $VERSION = 0.04;
@@ -103,6 +104,12 @@ sub random {
 # Random DateTime object for day defined by day.
 sub random_day {
 	my ($self, $day) = @_;
+	if ($day !~ m/^\d+$/ms) {
+		err "Day isn't positive number.";
+	}
+	if ($day == 0) {
+		err "Day cannot be a zero.";
+	}
 	my $monthly_day = DateTime::Event::Recurrence->monthly(
 		'days' => $day,
 	);
@@ -291,6 +298,10 @@ Random::Day - Class for random day generation.
          From Class::Utils::set_params():
                  Unknown parameter '%s'.
 
+ random_day():
+         Day cannot be a zero.
+         Day isn't number.
+
 =head1 EXAMPLE
 
  # Pragmas.
@@ -317,7 +328,8 @@ Random::Day - Class for random day generation.
 L<Class::Utils>,
 L<DateTime>,
 L<DateTime::Event::Random>,
-L<DateTime::Event::Recurrence>.
+L<DateTime::Event::Recurrence>,
+L<Error::Pure>.
 
 =head1 SEE ALSO
 

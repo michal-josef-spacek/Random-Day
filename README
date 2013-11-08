@@ -79,6 +79,10 @@ ERRORS
              From Class::Utils::set_params():
                      Unknown parameter '%s'.
 
+     random_day():
+             Day cannot be a zero.
+             Day isn't number.
+
 EXAMPLE
      # Pragmas.
      use strict;
@@ -101,7 +105,7 @@ EXAMPLE
 
 DEPENDENCIES
     Class::Utils, DateTime, DateTime::Event::Random,
-    DateTime::Event::Recurrence.
+    DateTime::Event::Recurrence, Error::Pure.
 
 SEE ALSO
     Data::Random.

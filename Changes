@@ -1,7 +1,7 @@
 0.04
  - Add some error checks to random_day() method.
  - Add some tests.
- - Update Module::Install to 1.08 version.
+ - Update Module::Install to 1.10 version.
 
 0.03 2013-11-07
  - Add dependency for perl (based on Error::Pure).

@@ -1,6 +1,7 @@
 0.04
  - Add some error checks to random_day() method.
  - Add some tests.
+ - Fix LICENSE file.
  - Update Module::Install to 1.10 version.
 
 0.03 2013-11-07

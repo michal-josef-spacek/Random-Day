@@ -9,6 +9,7 @@ use Class::Utils qw(set_params);
 use DateTime;
 use DateTime::Event::Random;
 use DateTime::Event::Recurrence;
+use English;
 use Error::Pure qw(err);
 
 # Version.
@@ -129,11 +130,18 @@ sub random_day_month {
 # DateTime object for day defined by day, month and year.
 sub random_day_month_year {
 	my ($self, $day, $month, $year) = @_;
-	return DateTime->new(
-		'day' => $day,
-		'month' => $month,
-		'year' => $year,
-	);
+	my $dt = eval {
+		DateTime->new(
+			'day' => $day,
+			'month' => $month,
+			'year' => $year,
+		);
+	};
+	if ($EVAL_ERROR) {
+		err 'Cannot create DateTime object.',
+			'Error', $EVAL_ERROR;
+	}
+	return $dt;
 }
 
 # Random DateTime object for day defined by month.
@@ -302,6 +310,10 @@ Random::Day - Class for random day generation.
          Day cannot be a zero.
          Day isn't number.
 
+ random_day_month_year(): 
+         Cannot create DateTime object.
+                 Error: %s
+
 =head1 EXAMPLE
 
  # Pragmas.
@@ -329,6 +341,7 @@ L<Class::Utils>,
 L<DateTime>,
 L<DateTime::Event::Random>,
 L<DateTime::Event::Recurrence>,
+L<English>,
 L<Error::Pure>.
 
 =head1 SEE ALSO

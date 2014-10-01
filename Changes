@@ -1,4 +1,5 @@
 0.04
+ - Add error check for random_day_month_year() method.
  - Add some error checks to random_day() method.
  - Add some tests.
  - Fix LICENSE file.

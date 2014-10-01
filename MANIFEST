@@ -23,4 +23,5 @@ t/Random-Day/04-new.t
 t/Random-Day/05-get.t
 t/Random-Day/06-random.t
 t/Random-Day/07-random_day.t
-t/Random-Day/08-random_day_month_year.t
+t/Random-Day/08-random_day_month.t
+t/Random-Day/09-random_day_month_year.t

@@ -124,7 +124,11 @@ sub random_day_month {
 		'days' => $day,
 		'months' => $month,
 	);
-	return $yearly_day_month->next($self->random);
+	my $dt = $yearly_day_month->next($self->random);
+	if (! defined $dt) {
+		err 'Cannot create DateTime object.';
+	}
+	return $dt;
 }
 
 # DateTime object for day defined by day, month and year.
@@ -310,7 +314,10 @@ Random::Day - Class for random day generation.
          Day cannot be a zero.
          Day isn't number.
 
- random_day_month_year(): 
+ random_day_month():
+         Cannot create DateTime object.
+
+ random_day_month_year():
          Cannot create DateTime object.
                  Error: %s
 

@@ -328,7 +328,7 @@ Random::Day - Class for random day generation.
 
  # Get date.
  my $dt = $obj->get;
- 
+
  # Print out.
  print $dt->ymd."\n";
 

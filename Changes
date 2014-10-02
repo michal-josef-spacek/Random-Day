@@ -1,4 +1,5 @@
 0.04
+ - Add README file.
  - Add error check for random_day_month_year() method.
  - Add error check for random_day_month() method.
  - Add some error checks to random_day() method.

@@ -10,6 +10,7 @@ abstract 'Class for random day generation';
 author 'Michal Špaček <skim@cpan.org>';
 license 'bsd';
 name 'Random-Day';
+readme_from 'Day.pm';
 requires 'Class::Utils' => 0.03;
 requires 'DateTime' => 0;
 requires 'DateTime::Event::Random' => 0;

@@ -115,6 +115,7 @@ sub random_day {
 # Random DateTime object for day defined by day and month.
 sub random_day_month {
 	my ($self, $day, $month) = @_;
+	$self->_check_day($day);
 	my $yearly_day_month = DateTime::Event::Recurrence->yearly(
 		'days' => $day,
 		'months' => $month,
@@ -129,6 +130,7 @@ sub random_day_month {
 # DateTime object for day defined by day, month and year.
 sub random_day_month_year {
 	my ($self, $day, $month, $year) = @_;
+	$self->_check_day($day);
 	my $dt = eval {
 		DateTime->new(
 			'day' => $day,
@@ -323,10 +325,14 @@ Random::Day - Class for random day generation.
 
  random_day_month():
          Cannot create DateTime object.
+         Day cannot be a zero.
+         Day isn't number.
 
  random_day_month_year():
          Cannot create DateTime object.
                  Error: %s
+         Day cannot be a zero.
+         Day isn't number.
 
 =head1 EXAMPLE
 

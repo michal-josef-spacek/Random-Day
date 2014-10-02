@@ -16,6 +16,7 @@ isa_ok($ret, 'DateTime');
 like($ret, qr{^\d\d\d\d-10-10T00:00:00$}, 'Random date from day and month.');
 
 # Test.
+$obj = Random::Day->new;
 eval {
 	$obj->random_day_month(40, 10);
 };
@@ -24,6 +25,7 @@ is($EVAL_ERROR, "Cannot create DateTime object.\n",
 clean();
 
 # Test.
+$obj = Random::Day->new;
 eval {
 	$obj->random_day_month(10, 40);
 };

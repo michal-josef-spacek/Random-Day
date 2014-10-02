@@ -17,6 +17,7 @@ like($ret, qr{^2014-10-10T00:00:00$},
 	'Right date from day, month and year informations.');
 
 # Test.
+$obj = Random::Day->new;
 eval {
 	$obj->random_day_month_year(40, 10, 2014);
 };

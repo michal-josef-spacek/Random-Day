@@ -17,6 +17,7 @@ like($ret, qr{^\d\d\d\d-10-\d\dT00:00:00$},
 	'Random date for concrete month.');
 
 # Test.
+$obj = Random::Day->new;
 eval {
 	$obj->random_month(40);
 };

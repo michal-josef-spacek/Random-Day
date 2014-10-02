@@ -105,12 +105,7 @@ sub random {
 # Random DateTime object for day defined by day.
 sub random_day {
 	my ($self, $day) = @_;
-	if ($day !~ m/^\d+$/ms) {
-		err "Day isn't positive number.";
-	}
-	if ($day == 0) {
-		err "Day cannot be a zero.";
-	}
+	$self->_check_day($day);
 	my $monthly_day = DateTime::Event::Recurrence->monthly(
 		'days' => $day,
 	);
@@ -189,6 +184,18 @@ sub random_year {
 			'year' => $year,
 		),
 	));
+}
+
+# Check day.
+sub _check_day {
+	my ($self, $day) = @_;
+	if ($day !~ m/^\d+$/ms) {
+		err "Day isn't positive number.";
+	}
+	if ($day == 0) {
+		err "Day cannot be a zero.";
+	}
+	return;
 }
 
 # Random date in range.

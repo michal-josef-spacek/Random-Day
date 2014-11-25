@@ -7,7 +7,7 @@ use inc::Module::Install;
 
 # Definition.
 abstract 'Class for random day generation';
-author 'Michal Špaček <skim@cpan.org>';
+author 'Michal Spacek <skim@cpan.org>';
 license 'bsd';
 name 'Random-Day';
 readme_from 'Day.pm';

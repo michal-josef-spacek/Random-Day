@@ -156,17 +156,31 @@ sub random_month {
 sub random_month_year {
 	my ($self, $month, $year) = @_;
 	my $daily = DateTime::Event::Recurrence->daily;
-	return $daily->next(DateTime::Event::Random->datetime(
-		'after' => DateTime->new(
+	my $after = eval {
+		DateTime->new(
 			'day' => 1,
 			'month' => $month,
 			'year' => $year,
-		),
-		'before' => DateTime->new(
+		);
+	};
+	if ($EVAL_ERROR) {
+		err 'Cannot create DateTime object.',
+			'Error', $EVAL_ERROR;
+	}
+	my $before = eval {
+		DateTime->new(
 			'day' => 31,
 			'month' => $month,
 			'year' => $year,
-		),
+		);
+	};
+	if ($EVAL_ERROR) {
+		err 'Cannot create DateTime object.',
+			'Error', $EVAL_ERROR;
+	}
+	return $daily->next(DateTime::Event::Random->datetime(
+		'after' => $after,
+		'before' => $before,
 	));
 }
 
@@ -333,6 +347,10 @@ Random::Day - Class for random day generation.
                  Error: %s
          Day cannot be a zero.
          Day isn't number.
+
+ random_month_year():
+         Cannot create DateTime object.
+                 Error: %s
 
 =head1 EXAMPLE
 

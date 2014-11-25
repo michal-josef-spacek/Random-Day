@@ -94,6 +94,10 @@ ERRORS
              Day cannot be a zero.
              Day isn't number.
 
+     random_month_year():
+             Cannot create DateTime object.
+                     Error: %s
+
 EXAMPLE
      # Pragmas.
      use strict;

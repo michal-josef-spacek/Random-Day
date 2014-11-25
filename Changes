@@ -3,6 +3,7 @@
  - Add error checks for random_day_month_year() method.
  - Add error checks for random_day_month() method.
  - Add error checks for random_day() method.
+ - Add error checks for random_month_year() method.
  - Add some tests.
  - Fix LICENSE file.
  - Update LICENSE AND COPYRIGHT section in doc to my standard.

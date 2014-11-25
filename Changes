@@ -5,7 +5,7 @@
  - Add error checks for random_day() method.
  - Add some tests.
  - Fix LICENSE file.
- - Update Module::Install to 1.12 version.
+ - Update Module::Install to 1.14 version.
 
 0.03 2013-11-07
  - Add dependency for perl (based on Error::Pure).

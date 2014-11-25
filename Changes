@@ -5,6 +5,7 @@
  - Add error checks for random_day() method.
  - Add some tests.
  - Fix LICENSE file.
+ - Update LICENSE AND COPYRIGHT section in doc to my standard.
  - Update Module::Install to 1.14 version.
 
 0.03 2013-11-07

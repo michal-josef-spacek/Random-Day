@@ -348,6 +348,10 @@ Random::Day - Class for random day generation.
          Day cannot be a zero.
          Day isn't number.
 
+ random_month():
+         Cannot create DateTime object.
+                 Error: %s
+
  random_month_year():
          Cannot create DateTime object.
                  Error: %s

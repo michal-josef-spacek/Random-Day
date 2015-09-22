@@ -388,7 +388,13 @@ L<Error::Pure>.
 
 =head1 SEE ALSO
 
-L<Data::Random>.
+=over
+
+=item L<Data::Random>
+
+Perl module to generate random data
+
+=back
 
 =head1 REPOSITORY
 

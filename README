@@ -127,7 +127,8 @@ DEPENDENCIES
     DateTime::Event::Recurrence, English, Error::Pure.
 
 SEE ALSO
-    Data::Random.
+    Data::Random
+        Perl module to generate random data
 
 REPOSITORY
     <https://github.com/tupinek/Random-Day>

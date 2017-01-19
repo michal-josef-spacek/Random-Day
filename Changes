@@ -2,6 +2,7 @@
  - Fix author dependencies.
  - Fix minimal Perl version in Makefile.PL.
  - Update copyright years.
+ - Update Module::Install::ReadmeFromPod to 0.26.
 
 0.05 2015-09-22T16:16:33+02:00
  - Improve SEE ALSO section in doc.

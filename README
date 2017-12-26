@@ -103,11 +103,9 @@ ERRORS
                      Error: %s
 
 EXAMPLE
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use Random::Day;
 
      # Object.

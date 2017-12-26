@@ -2,6 +2,7 @@
  - Fix Makefile.PL for new version of Perl and no default »use lib '.'«.
  - Fix author dependencies.
  - Fix minimal Perl version in Makefile.PL.
+ - Remove trivial comments.
  - Update author name.
  - Update copyright years.
  - Update Module::Install::ReadmeFromPod to 0.26.

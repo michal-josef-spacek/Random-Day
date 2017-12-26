@@ -1,10 +1,8 @@
 package Random::Day;
 
-# Pragmas.
 use strict;
 use warnings;
 
-# Modules.
 use Class::Utils qw(set_params);
 use DateTime;
 use DateTime::Event::Random;
@@ -12,7 +10,6 @@ use DateTime::Event::Recurrence;
 use English;
 use Error::Pure qw(err);
 
-# Version.
 our $VERSION = 0.06;
 
 # Constructor.
@@ -358,11 +355,9 @@ Random::Day - Class for random day generation.
 
 =head1 EXAMPLE
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Random::Day;
 
  # Object.

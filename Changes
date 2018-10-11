@@ -1,4 +1,5 @@
 0.08
+ - Remove verbatim from POD doc.
 
 0.07 2018-02-07T07:48:16+01:00
  - Fix Makefile.PL for new version of Perl and no default »use lib '.'«.

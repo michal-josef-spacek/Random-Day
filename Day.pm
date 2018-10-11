@@ -10,7 +10,7 @@ use DateTime::Event::Recurrence;
 use English;
 use Error::Pure qw(err);
 
-our $VERSION = 0.08;
+our $VERSION = 0.09;
 
 # Constructor.
 sub new {
@@ -422,6 +422,6 @@ BSD 2-Clause License
 
 =head1 VERSION
 
-0.08
+0.09
 
 =cut

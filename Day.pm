@@ -206,7 +206,7 @@ sub _check_day {
 		err "Day isn't positive number.";
 	}
 	if ($day == 0) {
-		err "Day cannot be a zero.";
+		err 'Day cannot be a zero.';
 	}
 	return;
 }

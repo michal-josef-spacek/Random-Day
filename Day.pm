@@ -247,9 +247,9 @@ Random::Day - Class for random day generation.
 
 =head1 METHODS
 
-=over 8
+=head2 C<new>
 
-=item C<new(%params)>
+ my $obj = Random::Day->new(%params);
 
 Constructor.
 
@@ -287,55 +287,69 @@ Default value is undef.
 
 =back
 
-=item C<get()>
+=head2 C<get>
+
+ my $dt = $obj->get;
 
 Get random date defined by constructor parameters.
 
 Returns DateTime object for date.
 
-=item C<random()>
+=head2 C<random>
+
+ my $dt = $obj->random;
 
 Get random date.
 
 Returns DateTime object for date.
 
-=item C<random_day($day)>
+=head2 C<random_day>
+
+ my $dt = $obj->random_day($day);
 
 Get random date defined by day.
 
 Returns DateTime object for date.
 
-=item C<random_day_month($day, $month)>
+=head2 C<random_day_month>
+
+ my $dt = $obj->random_day_month($day, $month);
 
 Get random date defined by day and month.
 
 Returns DateTime object for date.
 
-=item C<random_day_month_year($day, $month, $year)>
+=head2 C<random_day_month_year>
+
+ my $dt = $obj->random_day_month_year($day, $month, $year);
 
 Get date defined by day, month and year.
 
 Returns DateTime object for date.
 
-=item C<random_month($month)>
+=head2 C<random_month>
+
+ my $dt = $obj->random_month($month);
 
 Get random date defined by month.
 
 Returns DateTime object for date.
 
-=item C<random_month_year($month, $year)>
+=head2 C<random_month_year>
+
+ my $dt = $obj->random_month_year($month, $year);
 
 Get random date defined by month and year.
 
 Returns DateTime object for date.
 
-=item C<random_year($year)>
+=head2 C<random_year>
+
+ my $dt = $obj->random_year($year);
 
 Get random date defined by year.
 
 Returns DateTime object for date.
-
-=back
 
 =head1 ERRORS
 

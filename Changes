@@ -1,5 +1,6 @@
 0.09
  - Change =item to =head2 in METHODS section in doc.
+ - Update Module::Install to 1.19 version.
 
 0.08 2018-10-11T16:53:50+02:00
  - Code optimalization - to simple quotes.

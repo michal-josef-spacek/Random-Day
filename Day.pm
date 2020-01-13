@@ -235,6 +235,7 @@ Random::Day - Class for random day generation.
 =head1 SYNOPSIS
 
  use Random::Day;
+
  my $obj = Random::Day->new(%params);
  my $dt = $obj->get;
  my $dt = $obj->random;

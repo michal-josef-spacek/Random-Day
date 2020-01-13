@@ -1,4 +1,5 @@
 0.09
+ - Add test for random_year() method.
  - Change =item to =head2 in METHODS section in doc.
  - Update Module::Install to 1.19 version.
  - Update copyright years.

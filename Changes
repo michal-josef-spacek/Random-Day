@@ -1,5 +1,6 @@
 0.10
  - Fix bugtracker.
+ - Update copyright years.
 
 0.09 2020-01-14T00:28:19+01:00
  - Add test for random_year() method.

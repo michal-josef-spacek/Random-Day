@@ -165,7 +165,6 @@ sub random_month {
 sub random_month_year {
 	my ($self, $month, $year) = @_;
 
-	my $daily = DateTime::Event::Recurrence->daily;
 	my $after = eval {
 		DateTime->new(
 			'day' => 1,
@@ -177,18 +176,11 @@ sub random_month_year {
 		err 'Cannot create DateTime object.',
 			'Error', $EVAL_ERROR;
 	}
-	my $before = eval {
-		DateTime->new(
-			'day' => 31,
-			'month' => $month,
-			'year' => $year,
-		);
-	};
-	if ($EVAL_ERROR) {
-		err 'Cannot create DateTime object.',
-			'Error', $EVAL_ERROR;
-	}
 
+	my $before = $after->clone;
+	$before->add(months => 1)->subtract(days => 1);
+
+	my $daily = DateTime::Event::Recurrence->daily;
 	return $daily->next(DateTime::Event::Random->datetime(
 		'after' => $after,
 		'before' => $before,

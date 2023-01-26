@@ -393,6 +393,8 @@ Returns DateTime object for date.
 
 =head1 EXAMPLE
 
+=for comment filename=get_random_day.pl
+
  use strict;
  use warnings;
 

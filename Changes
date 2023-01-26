@@ -3,6 +3,7 @@
    random_year().
  - Add Random::Day::InTheFuture object.
  - Add Random::Day::InThePast object.
+ - Fix test dependencies.
  - Remove obsolete code from t/Random-Day/05-random.t .
 
 0.12 2023-01-26T11:46:23+01:00

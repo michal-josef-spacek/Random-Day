@@ -191,6 +191,19 @@ sub random_month_year {
 sub random_year {
 	my ($self, $year) = @_;
 
+	if ($self->{'dt_from'}->year > $year) {
+		err "Year is lesser than minimal year.",
+			'Expected year', $year,
+			'Minimal year', $self->{'dt_from'}->year,
+		;
+	}
+	if ($self->{'dt_to'}->year < $year) {
+		err "Year is greater than maximal year.",
+			'Expected year', $year,
+			'Maximal year', $self->{'dt_to'}->year,
+		;
+	}
+
 	my $daily = DateTime::Event::Recurrence->daily;
 
 	return $daily->next(DateTime::Event::Random->datetime(
@@ -390,6 +403,14 @@ Returns DateTime object for date.
  random_month_year():
          Cannot create DateTime object.
                  Error: %s
+
+ random_year():
+         Year is greater than maximal year.
+                 Expected year: %s
+                 Maximal year: %s
+         Year is lesser than minimal year.
+                 Expected year: %s
+                 Minimal year: %s
 
 =head1 EXAMPLE
 

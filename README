@@ -134,6 +134,14 @@ ERRORS
              Cannot create DateTime object.
                      Error: %s
 
+     random_year():
+             Year is greater than maximal year.
+                     Expected year: %s
+                     Maximal year: %s
+             Year is lesser than minimal year.
+                     Expected year: %s
+                     Minimal year: %s
+
 EXAMPLE
      use strict;
      use warnings;

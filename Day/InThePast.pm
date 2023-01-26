@@ -187,6 +187,15 @@ Returns DateTime object for date.
                  Cannot create DateTime object.
                          Error: %s
 
+ random_year():
+         From Random::Day::random_year():
+                 Year is greater than maximal year.
+                         Expected year: %s
+                         Maximal year: %s
+                 Year is lesser than minimal year.
+                         Expected year: %s
+                         Minimal year: %s
+
 =head1 EXAMPLE
 
 =for comment filename=get_random_day_in_the_past.pl

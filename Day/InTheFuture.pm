@@ -184,8 +184,18 @@ Returns DateTime object for date.
 
  random_month_year():
          From Random::Day::random_month_year():
+                 Begin of expected month is lesser than minimal date.
+                         Expected year: %s
+                         Expected month: %s
+                         Minimal year: %s
+                         Minimal month: %s
                  Cannot create DateTime object.
                          Error: %s
+                 End of expected month is greater than maximal date.
+                         Expected year: %s
+                         Expected month: %s
+                         Maximal year: %s
+                         Maximal month: %s
 
  random_year():
          From Random::Day::random_year():

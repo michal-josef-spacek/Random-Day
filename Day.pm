@@ -177,8 +177,26 @@ sub random_month_year {
 			'Error', $EVAL_ERROR;
 	}
 
+	if (DateTime->compare($self->{'dt_from'}, $after) == 1) {
+		err "Begin of expected month is lesser than minimal date.",
+			'Expected year', $year,
+			'Expected month', $month,
+			'Minimal year', $self->{'dt_from'}->year,
+			'Minimal month', $self->{'dt_from'}->month,
+		;
+	}
+
 	my $before = $after->clone;
 	$before->add(months => 1)->subtract(days => 1);
+
+	if (DateTime->compare($before, $self->{'dt_to'}) == 1) {
+		err "End of expected month is greater than maximal date.",
+			'Expected year', $year,
+			'Expected month', $month,
+			'Maximal year', $self->{'dt_to'}->year,
+			'Maximal month', $self->{'dt_to'}->month,
+		;
+	}
 
 	my $daily = DateTime::Event::Recurrence->daily;
 	return $daily->next(DateTime::Event::Random->datetime(
@@ -401,8 +419,18 @@ Returns DateTime object for date.
                  Error: %s
 
  random_month_year():
+         Begin of expected month is lesser than minimal date.
+                 Expected year: %s
+                 Expected month: %s
+                 Minimal year: %s
+                 Minimal month: %s
          Cannot create DateTime object.
                  Error: %s
+         End of expected month is greater than maximal date.
+                 Expected year: %s
+                 Expected month: %s
+                 Maximal year: %s
+                 Maximal month: %s
 
  random_year():
          Year is greater than maximal year.

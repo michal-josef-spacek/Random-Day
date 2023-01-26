@@ -5,11 +5,13 @@ TODO
 3. GT issue - Just a suggestion: wouldn't it be simpler and more lightweight if
 you convert dt_from and dt_to to epoch, then calculate a random number roughly
 between epoch_from and epoch_to, then convert back to DateTime object?
-4. Fix random_month_year() to accept dt_from and dt_to.
 6. Fix random_day_month_year() to accept dt_from and dt_to.
 7.
 
 Applied
 =======
 5. Fix random_year() to accept dt_from and dt_to.
+OK [20230126] skim
+
+4. Fix random_month_year() to accept dt_from and dt_to.
 OK [20230126] skim

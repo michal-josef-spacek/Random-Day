@@ -450,6 +450,14 @@ L<Error::Pure>.
 
 Perl module to generate random data
 
+=item L<Random::Day::InTheFuture>
+
+Class for random day generation in the future.
+
+=item L<Random::Day::InThePast>
+
+Class for random day generation in the past.
+
 =back
 
 =head1 REPOSITORY

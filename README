@@ -168,6 +168,12 @@ SEE ALSO
     Data::Random
         Perl module to generate random data
 
+    Random::Day::InTheFuture
+        Class for random day generation in the future.
+
+    Random::Day::InThePast
+        Class for random day generation in the past.
+
 REPOSITORY
     <https://github.com/michal-josef-spacek/Random-Day>
 

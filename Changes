@@ -3,6 +3,8 @@
    random_year().
  - Add check for year/month in interval of 'dt_from' and 'dt_to' in
    random_year_month().
+ - Add check for year/month/day in interval of 'dt_from' and 'dt_to' in
+   random_year_month_day().
  - Add Random::Day::InTheFuture object.
  - Add Random::Day::InThePast object.
  - Fix test dependencies.

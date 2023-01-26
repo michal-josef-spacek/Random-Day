@@ -149,6 +149,28 @@ sub random_day_month_year {
 			'Error', $EVAL_ERROR;
 	}
 
+	if (DateTime->compare($self->{'dt_from'}, $dt) == 1) {
+		err "Begin of expected month is lesser than minimal date.",
+			'Expected year', $year,
+			'Expected month', $month,
+			'Expected day', $day,
+			'Minimal year', $self->{'dt_from'}->year,
+			'Minimal month', $self->{'dt_from'}->month,
+			'Minimal day', $self->{'dt_from'}->day,
+		;
+	}
+
+	if (DateTime->compare($dt, $self->{'dt_to'}) == 1) {
+		err "End of expected month is greater than maximal date.",
+			'Expected year', $year,
+			'Expected month', $month,
+			'Expected day', $day,
+			'Maximal year', $self->{'dt_to'}->year,
+			'Maximal month', $self->{'dt_to'}->month,
+			'Maximal day', $self->{'dt_to'}->day,
+		;
+	}
+
 	return $dt;
 }
 
@@ -409,10 +431,24 @@ Returns DateTime object for date.
          Day isn't number.
 
  random_day_month_year():
+         Begin of expected month is lesser than minimal date.
+                 Expected year: %s
+                 Expected month: %s
+                 Expected day: %s
+                 Minimal year: %s
+                 Minimal month: %s
+                 Minimal day: %s
          Cannot create DateTime object.
                  Error: %s
          Day cannot be a zero.
          Day isn't number.
+         End of expected month is greater than maximal date.
+                 Expected year: %s
+                 Expected month: %s
+                 Expected day: %s
+                 Maximal year: %s
+                 Maximal month: %s
+                 Maximal day: %s
 
  random_month():
          Cannot create DateTime object.

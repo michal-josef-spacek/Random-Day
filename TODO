@@ -5,7 +5,8 @@ TODO
 3. GT issue - Just a suggestion: wouldn't it be simpler and more lightweight if
 you convert dt_from and dt_to to epoch, then calculate a random number roughly
 between epoch_from and epoch_to, then convert back to DateTime object?
-4.
+4. Fix all methods to accept dt_from and dt_to.
+5.
 
 Applied
 =======

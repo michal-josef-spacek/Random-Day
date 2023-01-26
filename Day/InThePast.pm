@@ -183,7 +183,7 @@ Returns DateTime object for date.
                          Error: %s
 
  random_month_year():
-         From Random::Day::random_momth_year():
+         From Random::Day::random_month_year():
                  Cannot create DateTime object.
                          Error: %s
 

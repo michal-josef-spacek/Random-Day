@@ -121,18 +121,42 @@ ERRORS
              Day isn't number.
 
      random_day_month_year():
+             Begin of expected month is lesser than minimal date.
+                     Expected year: %s
+                     Expected month: %s
+                     Expected day: %s
+                     Minimal year: %s
+                     Minimal month: %s
+                     Minimal day: %s
              Cannot create DateTime object.
                      Error: %s
              Day cannot be a zero.
              Day isn't number.
+             End of expected month is greater than maximal date.
+                     Expected year: %s
+                     Expected month: %s
+                     Expected day: %s
+                     Maximal year: %s
+                     Maximal month: %s
+                     Maximal day: %s
 
      random_month():
              Cannot create DateTime object.
                      Error: %s
 
      random_month_year():
+             Begin of expected month is lesser than minimal date.
+                     Expected year: %s
+                     Expected month: %s
+                     Minimal year: %s
+                     Minimal month: %s
              Cannot create DateTime object.
                      Error: %s
+             End of expected month is greater than maximal date.
+                     Expected year: %s
+                     Expected month: %s
+                     Maximal year: %s
+                     Maximal month: %s
 
      random_year():
              Year is greater than maximal year.

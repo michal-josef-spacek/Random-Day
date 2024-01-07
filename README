@@ -50,6 +50,8 @@ METHODS
 
             Default value is undef.
 
+    Returns instance of object.
+
   "get"
      my $dt = $obj->get;
 

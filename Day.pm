@@ -351,6 +351,8 @@ Default value is undef.
 
 =back
 
+Returns instance of object.
+
 =head2 C<get>
 
  my $dt = $obj->get;

@@ -1,5 +1,6 @@
 0.14
  - Add missing random_day_year() method.
+ - Add tests to coverage of Random::Day::get().
  - Improve constructor doc.
  - Regen README file.
  - Update Module::Install to 1.21 version.

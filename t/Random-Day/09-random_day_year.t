@@ -4,7 +4,7 @@ use warnings;
 use English qw(-no_match_vars);
 use Error::Pure::Utils qw(clean);
 use Random::Day;
-use Test::More 'tests' => 10;
+use Test::More 'tests' => 13;
 use Test::NoWarnings;
 
 # Test.
@@ -84,3 +84,50 @@ eval {
 is($EVAL_ERROR, "Year is greater than maximal year.\n",
 	'Year is greater than maximal year (10-??-2100).');
 clean();
+
+# Test.
+$obj = Random::Day->new(
+	'dt_from' => DateTime->new(
+		'day' => 8,
+		'month' => 7,
+		'year' => 2014,
+	),
+	'dt_to' => DateTime->new(
+		'day' => 31,
+		'month' => 7,
+		'year' => 2014,
+	),
+);
+eval {
+	$obj->random_day_year(7, 2014);
+};
+is($EVAL_ERROR, "Day not fit between start and end dates.\n",
+	"Day not fit between start and end dates.");
+
+# Test.
+$obj = Random::Day->new(
+	'dt_to' => DateTime->new(
+		'day' => 7,
+		'month' => 1,
+		'year' => 2014,
+	),
+);
+eval {
+	$obj->random_day_year(8, 2014);
+};
+is($EVAL_ERROR, "Day is greater than maximal possible date.\n",
+	"Day is greater than maximal possible date.");
+
+# Test.
+$obj = Random::Day->new(
+	'dt_from' => DateTime->new(
+		'day' => 25,
+		'month' => 12,
+		'year' => 2014,
+	),
+);
+eval {
+	$obj->random_day_year(8, 2014);
+};
+is($EVAL_ERROR, "Day is lesser than minimal possible date.\n",
+	"Day is lesser than minimal possible date.");

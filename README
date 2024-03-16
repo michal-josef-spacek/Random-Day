@@ -152,9 +152,12 @@ ERRORS
 
      random_day_year():
              Day cannot be a zero.
+             Day is greater than maximal possible date.
              Day is greater than possible day.
                      Day: %s
+             Day is lesser than minimal possible date.
              Day isn't positive number.
+             Day not fit between start and end dates.
              Year is lesser than minimal year.
                      Expected year: %s
                      Minimal year: %s

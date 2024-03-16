@@ -157,9 +157,24 @@ sub random_day_year {
 	my ($from_month, $to_month) = (1, 12);
 	if ($self->{'dt_from'}->year == $year) {
 		$from_month = $self->{'dt_from'}->month;
+		if ($self->{'dt_from'}->day > $day) {
+			$from_month++;
+		}
+		if ($from_month > 12) {
+			err 'Day is lesser than minimal possible date.';
+		}
 	}
 	if ($self->{'dt_to'}->year == $year) {
 		$to_month = $self->{'dt_to'}->month;
+		if ($self->{'dt_to'}->day < $day) {
+			$to_month--;
+		}
+		if ($to_month < 1) {
+			err 'Day is greater than maximal possible date.';
+		}
+	}
+	if ($to_month < $from_month) {
+		err 'Day not fit between start and end dates.';
 	}
 	my @possible_months = ($from_month .. $to_month);
 	my $dt;
@@ -508,9 +523,12 @@ Returns DateTime object for date.
 
  random_day_year():
          Day cannot be a zero.
+         Day is greater than maximal possible date.
          Day is greater than possible day.
                  Day: %s
+         Day is lesser than minimal possible date.
          Day isn't positive number.
+         Day not fit between start and end dates.
          Year is lesser than minimal year.
                  Expected year: %s
                  Minimal year: %s

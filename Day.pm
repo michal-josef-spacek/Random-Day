@@ -132,6 +132,51 @@ sub random_day_month {
 	return $dt;
 }
 
+# Random DateTime object for day defined by day and year.
+sub random_day_year {
+	my ($self, $day, $year) = @_;
+
+	$self->_check_day($day);
+	if ($day > 31) {
+		err 'Day is greater than possible day.',
+			'Day', $day,
+		;
+	}
+	if ($self->{'dt_from'}->year > $year) {
+		err 'Year is lesser than minimal year.',
+			'Expected year', $year,
+			'Minimal year', $self->{'dt_from'}->year,
+		;
+	}
+	if ($self->{'dt_to'}->year < $year) {
+		err 'Year is greater than maximal year.',
+			'Expected year', $year,
+			'Maximal year', $self->{'dt_to'}->year,
+		;
+	}
+	my ($from_month, $to_month) = (1, 12);
+	if ($self->{'dt_from'}->year == $year) {
+		$from_month = $self->{'dt_from'}->month;
+	}
+	if ($self->{'dt_to'}->year == $year) {
+		$to_month = $self->{'dt_to'}->month;
+	}
+	my @possible_months = ($from_month .. $to_month);
+	my $dt;
+	while (! $dt) {
+		my $random_month = $possible_months[int(rand(scalar @possible_months))];
+		$dt = eval {
+			DateTime->new(
+				'day' => $day,
+				'month' => $random_month,
+				'year' => $year,
+			);
+		};
+	}
+
+	return $dt;
+}
+
 # DateTime object for day defined by day, month and year.
 sub random_day_month_year {
 	my ($self, $day, $month, $year) = @_;
@@ -305,6 +350,7 @@ Random::Day - Class for random day generation.
  my $dt = $obj->random_day($day);
  my $dt = $obj->random_day_month($day, $month);
  my $dt = $obj->random_day_month_year($day, $month, $year);
+ my $dt = $obj->random_day_year($day, $year);
  my $dt = $obj->random_month($month);
  my $dt = $obj->random_month_year($month, $year);
  my $dt = $obj->random_year($year);
@@ -385,6 +431,14 @@ Get random date defined by day and month.
 
 Returns DateTime object for date.
 
+=head2 C<random_day_year>
+
+ my $dt = $obj->random_day_year($day, $year);
+
+Get random date defined by day and year.
+
+Returns DateTime object for date.
+
 =head2 C<random_day_month_year>
 
  my $dt = $obj->random_day_month_year($day, $month, $year);
@@ -451,6 +505,18 @@ Returns DateTime object for date.
                  Maximal year: %s
                  Maximal month: %s
                  Maximal day: %s
+
+ random_day_year():
+         Day cannot be a zero.
+         Day is greater than possible day.
+                 Day: %s
+         Day isn't positive number.
+         Year is lesser than minimal year.
+                 Expected year: %s
+                 Minimal year: %s
+         Year is greater than maximal year.
+                 Expected year: %s
+                 Maximal year: %s
 
  random_month():
          Cannot create DateTime object.

@@ -10,6 +10,7 @@ SYNOPSIS
      my $dt = $obj->random_day($day);
      my $dt = $obj->random_day_month($day, $month);
      my $dt = $obj->random_day_month_year($day, $month, $year);
+     my $dt = $obj->random_day_year($day, $year);
      my $dt = $obj->random_month($month);
      my $dt = $obj->random_month_year($month, $year);
      my $dt = $obj->random_year($year);
@@ -80,6 +81,13 @@ METHODS
 
     Returns DateTime object for date.
 
+  "random_day_year"
+     my $dt = $obj->random_day_year($day, $year);
+
+    Get random date defined by day and year.
+
+    Returns DateTime object for date.
+
   "random_day_month_year"
      my $dt = $obj->random_day_month_year($day, $month, $year);
 
@@ -141,6 +149,18 @@ ERRORS
                      Maximal year: %s
                      Maximal month: %s
                      Maximal day: %s
+
+     random_day_year():
+             Day cannot be a zero.
+             Day is greater than possible day.
+                     Day: %s
+             Day isn't positive number.
+             Year is lesser than minimal year.
+                     Expected year: %s
+                     Minimal year: %s
+             Year is greater than maximal year.
+                     Expected year: %s
+                     Maximal year: %s
 
      random_month():
              Cannot create DateTime object.

@@ -494,12 +494,12 @@ Returns DateTime object for date.
 
  random_day():
          Day cannot be a zero.
-         Day isn't number.
+         Day isn't positive number.
 
  random_day_month():
          Cannot create DateTime object.
          Day cannot be a zero.
-         Day isn't number.
+         Day isn't positive number.
 
  random_day_month_year():
          Begin of expected month is lesser than minimal date.
@@ -512,7 +512,7 @@ Returns DateTime object for date.
          Cannot create DateTime object.
                  Error: %s
          Day cannot be a zero.
-         Day isn't number.
+         Day isn't positive number.
          End of expected month is greater than maximal date.
                  Expected year: %s
                  Expected month: %s

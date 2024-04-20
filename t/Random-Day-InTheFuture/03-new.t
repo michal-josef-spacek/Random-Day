@@ -8,6 +8,10 @@ use Test::More 'tests' => 4;
 use Test::NoWarnings;
 
 # Test.
+my $obj = Random::Day::InTheFuture->new;
+isa_ok($obj, 'Random::Day::InTheFuture');
+
+# Test.
 eval {
 	Random::Day::InTheFuture->new('');
 };
@@ -23,7 +27,3 @@ eval {
 is($EVAL_ERROR, "Unknown parameter 'something'.\n",
 	'Bad \'something\' parameter.');
 clean();
-
-# Test.
-my $obj = Random::Day::InTheFuture->new;
-isa_ok($obj, 'Random::Day::InTheFuture');

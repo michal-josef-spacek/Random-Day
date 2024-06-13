@@ -1,4 +1,5 @@
 0.15
+ - Add check for 'dt_from' and 'dt_to' parameters.
  - Improve doc.
  - Move functional test to begin.
 

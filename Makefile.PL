@@ -22,6 +22,7 @@ requires 'Class::Utils' => 0.03;
 requires 'DateTime' => 0;
 requires 'DateTime::Event::Random' => 0;
 requires 'DateTime::Event::Recurrence' => 0;
+requires 'English' => 0;
 requires 'Error::Pure' => 0.15;
 requires 'Mo::utils' => '0.08';
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/Random-Day/issues';

@@ -458,7 +458,7 @@ Returns DateTime object for date.
 
  my $dt = $obj->random_day_month_year($day, $month, $year);
 
-Get date defined by day, month and year.
+Get random date defined by day, month and year.
 
 Returns DateTime object for date.
 

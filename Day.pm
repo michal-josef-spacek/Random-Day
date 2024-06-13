@@ -11,7 +11,7 @@ use English;
 use Error::Pure qw(err);
 use Mo::utils 0.08 qw(check_isa);
 
-our $VERSION = 0.15;
+our $VERSION = 0.16;
 
 # Constructor.
 sub new {
@@ -640,6 +640,6 @@ BSD 2-Clause License
 
 =head1 VERSION
 
-0.15
+0.16
 
 =cut

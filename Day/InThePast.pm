@@ -6,7 +6,7 @@ use warnings;
 
 use DateTime;
 
-our $VERSION = 0.15;
+our $VERSION = 0.16;
 
 sub new {
 	my ($class, @params) = @_;
@@ -272,6 +272,6 @@ BSD 2-Clause License
 
 =head1 VERSION
 
-0.15
+0.16
 
 =cut

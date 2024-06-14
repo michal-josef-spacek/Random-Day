@@ -162,6 +162,10 @@ Returns DateTime object for date.
                  Parameter 'dt_from' must be a 'DateTime' object.
                          Value: %s
                          Reference: %s
+         From Random::Day::new():
+                 Parameter 'dt_from' must have older or same date than 'dt_to'.
+                         Date from: %s
+                         Date to: %s
 
  random_day():
          From Random::Day::random_day():

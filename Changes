@@ -1,4 +1,5 @@
 0.16
+ - Add check for parameters 'dt_from' <= 'dt_to'.
 
 0.15 2024-06-13T23:57:22+02:00
  - Add check for 'dt_from' and 'dt_to' parameters.

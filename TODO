@@ -5,7 +5,6 @@ TODO
 3. GT issue - Just a suggestion: wouldn't it be simpler and more lightweight if
 you convert dt_from and dt_to to epoch, then calculate a random number roughly
 between epoch_from and epoch_to, then convert back to DateTime object?
-7. In Random::Day::InThePast check dt_to if is older than actual date.
 8.
 
 Applied
@@ -18,3 +17,6 @@ OK [20230126] skim
 
 6. Fix random_day_month_year() to accept dt_from and dt_to.
 OK [20230126] skim
+
+7. In Random::Day::InThePast check dt_to if is older than actual date.
+OK [20240614] skim

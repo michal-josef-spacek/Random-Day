@@ -45,6 +45,13 @@ sub new {
 	check_isa($self, 'dt_from', 'DateTime');
 	check_isa($self, 'dt_to', 'DateTime');
 
+	if (DateTime->compare($self->{'dt_from'}, $self->{'dt_to'}) == 1) {
+		err "Parameter 'dt_from' must have older or same date than 'dt_to'.",
+			'Date from', $self->{'dt_from'},
+			'Date to', $self->{'dt_to'},
+		;
+	}
+
 	return $self;
 }
 
@@ -502,6 +509,9 @@ Returns DateTime object for date.
                  Parameter 'dt_to' must be a 'DateTime' object.
                          Value: %s
                          Reference: %s
+         Parameter 'dt_from' must have older or same date than 'dt_to'.
+                 Date from: %s
+                 Date to: %s
 
  random_day():
          Day cannot be a zero.

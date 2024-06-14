@@ -28,6 +28,7 @@ requires 'Mo::utils' => '0.08';
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/Random-Day/issues';
 resources 'homepage' => 'https://github.com/michal-josef-spacek/Random-Day';
 resources 'repository' => 'git://github.com/michal-josef-spacek/Random-Day';
+test_requires 'DateTime' => 0;
 test_requires 'English' => 0;
 test_requires 'Error::Pure::Utils' => 0;
 test_requires 'Test::More' => 0;

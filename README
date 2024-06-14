@@ -127,6 +127,9 @@ ERRORS
                      Parameter 'dt_to' must be a 'DateTime' object.
                              Value: %s
                              Reference: %s
+             Parameter 'dt_from' must have older or same date than 'dt_to'.
+                     Date from: %s
+                     Date to: %s
 
      random_day():
              Day cannot be a zero.

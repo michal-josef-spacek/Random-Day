@@ -249,9 +249,14 @@ sub random_day_month_year {
 sub random_month {
 	my ($self, $month) = @_;
 
-	my $random_day = $self->_range;
+	my @possible_years = ($self->{'dt_from'}->year .. $self->{'dt_to'}->year);
+	if ($month > $self->{'dt_to'}->month) {
+		pop @possible_years;
+	}
+	my $random_year_index =  int(rand(scalar @possible_years));
+	my $random_year = $possible_years[$random_year_index];
 
-	return $self->random_month_year($month, $random_day->year);
+	return $self->random_month_year($month, $random_year);
 }
 
 # Random DateTime object for day defined by month and year.

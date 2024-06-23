@@ -622,6 +622,10 @@ L<Mo::utils>.
 
 Perl module to generate random data
 
+=item L<DateTime::Event::Random>
+
+DateTime extension for creating random datetimes.
+
 =item L<Random::Day::InTheFuture>
 
 Class for random day generation in the future.

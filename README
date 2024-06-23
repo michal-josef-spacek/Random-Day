@@ -227,6 +227,9 @@ SEE ALSO
     Data::Random
         Perl module to generate random data
 
+    DateTime::Event::Random
+        DateTime extension for creating random datetimes.
+
     Random::Day::InTheFuture
         Class for random day generation in the future.
 

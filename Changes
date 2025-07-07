@@ -1,4 +1,5 @@
 0.17
+ - Remove _range() private method.
  - Update copyright year.
 
 0.16 2024-06-23T12:55:50+02:00

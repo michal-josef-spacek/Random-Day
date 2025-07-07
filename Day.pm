@@ -110,8 +110,13 @@ sub random {
 	my $self = shift;
 
 	my $daily = DateTime::Event::Recurrence->daily;
+	my $dt = DateTime::Event::Random->datetime(
+		'after' => $self->{'dt_from'},
+		'before' => $self->{'dt_to'},
+	);
+	my $ret_dt = $daily->next($dt);
 
-	return $daily->next($self->_range);
+	return $ret_dt;
 }
 
 # Random DateTime object for day defined by day.
@@ -347,16 +352,6 @@ sub _check_day {
 		err 'Day cannot be a zero.';
 	}
 	return;
-}
-
-# Random date in range.
-sub _range {
-	my $self = shift;
-
-	return DateTime::Event::Random->datetime(
-		'after' => $self->{'dt_from'},
-		'before' => $self->{'dt_to'},
-	);
 }
 
 1;

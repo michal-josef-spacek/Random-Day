@@ -122,12 +122,24 @@ sub get {
 sub random {
 	my $self = shift;
 
-	my $daily = DateTime::Event::Recurrence->daily;
+	# Random DateTime between from and to.
+	my $dt_from = $self->{'dt_from'}->clone;
+	if ($dt_from->hms ne '00:00:00') {
+		$dt_from->add('days' => 1);
+		$dt_from->set(
+			'hour' => 0,
+			'minute' => 0,
+			'second' => 0,
+		);
+	}
 	my $dt = DateTime::Event::Random->datetime(
-		'after' => $self->{'dt_from'},
+		'after' => $dt_from,
 		'before' => $self->{'dt_to'},
 	);
-	my $ret_dt = $daily->next($dt);
+
+	# Unify to begin of day.
+	my $daily = DateTime::Event::Recurrence->daily;
+	my $ret_dt = $daily->current($dt);
 
 	return $ret_dt;
 }

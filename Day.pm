@@ -52,6 +52,19 @@ sub new {
 		;
 	}
 
+	# There is no sense in case that dt_from and dt_to parameters are in
+	# same day and not in 00:00:00.
+	if ($self->{'dt_from'}->year == $self->{'dt_to'}->year
+		&& $self->{'dt_from'}->month == $self->{'dt_to'}->month
+		&& $self->{'dt_from'}->day == $self->{'dt_to'}->day
+		&& $self->{'dt_from'}->hms ne '00:00:00') {
+
+		err "Parameters 'dt_from' and 'dt_to' are in the same day and not on begin.",
+			'Date from', $self->{'dt_from'},
+			'Date to', $self->{'dt_to'},
+		;
+	}
+
 	return $self;
 }
 
@@ -510,6 +523,9 @@ Returns DateTime object for date.
                          Value: %s
                          Reference: %s
          Parameter 'dt_from' must have older or same date than 'dt_to'.
+                 Date from: %s
+                 Date to: %s
+         Parameters 'dt_from' and 'dt_to' are in the same day and not on begin.
                  Date from: %s
                  Date to: %s
 
